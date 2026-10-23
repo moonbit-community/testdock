@@ -40,9 +40,6 @@ async fn assert_http(container : @testdock.Container) -> Unit {
 
 ///|
 async test "Docker: local build, env file, init service, HTTP, isolation and cleanup" {
-  if @env.get_env_var("TESTDOCK_DOCKER_TESTS") != Some("1") {
-    return
-  }
   let dir = @fs.tmpdir(prefix="testdock-")
   defer @fs.rmdir(dir, recursive=true)
   let label = "\{@env.now()}"
@@ -135,9 +132,6 @@ async test "Docker: local build, env file, init service, HTTP, isolation and cle
 
 ///|
 async test "Docker: unhealthy and timed-out startup remove partial resources" {
-  if @env.get_env_var("TESTDOCK_DOCKER_TESTS") != Some("1") {
-    return
-  }
   for
     (reason, retries, timeout) in [
       ("unhealthy", 1, 30_000),

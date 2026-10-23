@@ -28,7 +28,7 @@ async test "write and read PostgreSQL data through HTTP" {
     json_inspect(initial_body.json(), content=[])
 
     // The HTTP API inserts a row into PostgreSQL and returns its generated ID.
-    let message : Json = { "body": "hello from testdock" }
+    let message : Json = { "body": "hello from HTTP server" }
     let (created, created_body) = @http.post(endpoint.href(), message, headers={
       "Content-Type": "application/json",
     })
@@ -43,7 +43,7 @@ async test "write and read PostgreSQL data through HTTP" {
     })
     json_inspect(created_body.json(), content={
       "id": 1,
-      "body": "hello from testdock",
+      "body": "hello from HTTP server",
     })
 
     // A separate request reads the committed row back from the database.
@@ -58,7 +58,7 @@ async test "write and read PostgreSQL data through HTTP" {
       "cookies": [],
     })
     json_inspect(fetched_body.json(), content=[
-      { "id": 1, "body": "hello from testdock" },
+      { "id": 1, "body": "hello from HTTP server" },
     ])
   })
 }

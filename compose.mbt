@@ -26,7 +26,7 @@ pub fn DockerCompose::DockerCompose(
   client~ : Client = Local,
   force_build~ : Bool = false,
 ) -> DockerCompose {
-  println("[debug] Running docker compose ...")
+  println("[TestDock] Running docker compose ...")
   match client {
     Local =>
       {

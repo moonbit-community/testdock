@@ -45,8 +45,6 @@ jobs:
           git diff --exit-code
 
       - name: test with Docker Compose
-        env:
-          TESTDOCK_DOCKER_TESTS: "1"
         run: |
           ulimit -s 8176
           moon test --target ${{ matrix.target }}
