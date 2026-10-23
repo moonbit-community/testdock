@@ -1,0 +1,29 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "moonbit-community/testdock"
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) enum Client {
+  Local
+}
+
+type Container
+pub async fn Container::get_bridge_ip_address(Self) -> String?
+pub fn Container::get_host(Self) -> String
+pub async fn Container::get_host_port_ipv4(Self, String) -> String?
+pub async fn Container::get_host_port_ipv6(Self, String) -> String?
+pub fn Container::id(Self) -> String
+pub async fn Container::ports(Self) -> Map[String, Array[(String, String)]]
+
+type DockerCompose
+pub fn DockerCompose::DockerCompose(config~ : String, env? : String, client? : Client, force_build? : Bool) -> Self
+pub async fn DockerCompose::down(Self) -> Unit
+pub async fn DockerCompose::service(Self, String) -> Container
+pub async fn DockerCompose::up(Self, timeout? : Int32) -> Unit
+
+// Type aliases
+
+// Traits

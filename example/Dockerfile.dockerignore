@@ -1,0 +1,12 @@
+**
+!moon.mod
+!moon.pkg
+!compose.mbt
+!container.mbt
+!docker.mbt
+!example/
+!example/moon.mod
+!example/app/
+!example/app/**
+!example/main/
+!example/main/**

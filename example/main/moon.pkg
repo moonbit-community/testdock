@@ -1,0 +1,8 @@
+import {
+  "moonbitlang/async",
+  "moonbit-community/testdock-example/app",
+}
+
+supported_targets = "native+wasm"
+
+pkgtype(kind: "executable")
